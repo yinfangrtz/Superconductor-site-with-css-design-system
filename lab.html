@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <!-- Google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Ubuntu+Mono:wght@400;700&display=swap" rel="stylesheet">
+      
+  <!-- Our custom CSS -->
+  <link rel="stylesheet" href="index.css">
+  <title>CSS Practice Project</title>
+  <script src="navigation.js" defer></script>
+  <script src="tabs.js" defer></script>
+
+</head>
+
+<body class="Lab">
+  <a class="skip-to-content" href="#main">Skip to content</a>
+  <header class="primary-header flex">
+    <div>
+      <img src="./assets/shared/logo.png" alt="logo" class="logo">
+    </div>
+    <button class="mobile-nav-toggle" aria-controls="primary-navigation"><span class="sr-only" aria-expanded="false">Menu</span></button>
+    <nav> 
+        <ul id="primary-navigation" data-visible="false" class="primary-navigation underline-indicators flex">
+            <li><a class="ff-mono-normal uppercase text-white letter-spacing-2" href="index.html"><span aria-hidden="true">00</span>Home</a>
+            <li><a class="ff-mono-normal uppercase text-white letter-spacing-2" href="effect.html"><span aria-hidden="true">01</span>effect</a>
+            <li class="active"><a class="ff-mono-normal uppercase text-white letter-spacing-2" href="lab.html"><span aria-hidden="true">02</span>Lab</a>
+            <li><a class="ff-mono-normal uppercase text-white letter-spacing-2" href="materials.html"><span aria-hidden="true">03</span>Materials</a>
+        </ul>
+    </nav>
+  </header>
+  
+  <main id="main" class="grid-container grid-container--Lab flow">
+    <h1 class="numbered-title"><span aria-hidden="true">02</span> the Frontier Lab</h1>
+    
+    <div class="dot-indicators flex" role="tablist" aria-label="Lab member list">
+      <button aria-selected="true" aria-controls="Pioneering-tab" role="tab" data-image="Pioneering-image" tabindex="0"><span class="sr-only">The Pioneering</span></button>
+      <button aria-selected="false" aria-controls="mission-tab" role="tab" data-image="mission-image" tabindex="-1"><span class="sr-only">The mission specialist</span></button>
+      <button aria-selected="false" aria-controls="synergy-tab" role="tab" data-image="synergy-image" tabindex="-1"><span class="sr-only">Thesynergy</span></button>
+      <button aria-selected="false" aria-controls="Lab-tab" role="tab" data-image="Lab-image" tabindex="-1"><span class="sr-only">The Lab engineer</span></button>
+    </div>
+    
+    <!-- Pioneering -->
+    <article class="Lab-details flow" id="Pioneering-tab" role="tabpanel" tabindex="0">
+      <header class="flow flow--space-small">
+        <h2 class="fs-600 ff-mono uppercase">Pioneering</h2>
+        <p class="scale fs-700 uppercase ff-mono">Douglas Hurley</p>
+      </header>
+      <p>This leading-edge facility has carved its path through the intricate landscape of condensed-matter physics, unraveling the mysteries of zero-resistance materials and groundbreaking phenomena.</p>
+    </article> 
+    
+    <!-- mission specialist -->
+    <article hidden class="Lab-details flow" id="mission-tab" role="tabpanel" tabindex="0">
+      <header class="flow flow--space-small">
+        <h2 class="fs-600 ff-mono uppercase">Mission Specialist</h2>
+        <p class="scale fs-700 uppercase ff-mono">Mark SHuttleworth</p>
+      </header>
+      <p>Its researchers, scientists, and engineers tirelessly collaborate to engineer and analyze new materials that exhibit the remarkable properties of superconductors, revolutionizing how we harness and manipulate electrical current.</p>
+    </article> 
+    
+    <!--synergy -->
+    <article hidden class="Lab-details flow" id="synergy-tab" role="tabpanel" tabindex="0">
+      <header class="flow flow--space-small">
+        <h2 class="fs-600 ff-mono uppercase">synergy</h2>
+        <p class="scale fs-700 uppercase ff-mono">Victor Glover</p>
+      </header>
+      <p>From creating more energy-efficient power transmission systems to propelling the design of powerful and compact magnetic resonance imaging (MRI) devices, the lab's impact reverberates through diverse industries and scientific disciplines.</p>
+    </article> 
+    
+    <!-- engineer -->
+    <article hidden class="Lab-details flow" id="Lab-tab" role="tabpanel" tabindex="0">
+      <header class="flow flow--space-small">
+        <h2 class="fs-600 ff-mono uppercase">Flight Engineer</h2>
+        <p class="scale fs-700 uppercase ff-mono">Anousheh Ansari</p>
+      </header>
+      <p>With each breakthrough, discovery, and innovation, this leading lab continues to shape the future of superconductivity, inspiring generations of scientists to dream, explore, and transform the world.</p>
+    </article> 
+    
+    
+    <picture id="Pioneering-image">
+      <img src="assets/Lab/image1.png" alt="Douglas Hurley">
+    </picture>
+    <picture hidden id="mission-image">
+      <img src="assets/Lab/image2.png" alt="Douglas Hurley">
+    </picture>
+    <picture hidden id="synergy-image">
+      <img src="assets/Lab/image3.png" alt="Douglas Hurley">
+    </picture>
+    <picture hidden id="Lab-image">
+      <img src="assets/Lab/image4.png" alt="Douglas Hurley">
+    </picture>
+  </main>
+</body>
+</html>

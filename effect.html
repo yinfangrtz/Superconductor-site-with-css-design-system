@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <!-- Google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Ubuntu+Mono:wght@400;700&display=swap" rel="stylesheet">
+      
+  <!-- Our custom CSS -->
+  <link rel="stylesheet" href="index.css">
+  <title>CSS Practice Project</title>
+  <script src="navigation.js" defer></script>
+  <script src="tabs.js" defer></script>
+</head>
+
+<body class="effect">
+  <a class="skip-to-content" href="#main">Skip to content</a>
+  <header class="primary-header flex">
+    <div>
+      <img src="./assets/shared/logo.png" alt="logo" class="logo">
+    </div>
+    <button class="mobile-nav-toggle" aria-controls="primary-navigation"><span class="sr-only" aria-expanded="false">Menu</span></button>
+    <nav>
+        <ul id="primary-navigation" data-visible="false" class="primary-navigation underline-indicators flex">
+            <li><a class="ff-mono-normal uppercase text-white letter-spacing-2" href="index.html"><span aria-hidden="true">00</span>Home</a>
+            <li class="active"><a class="ff-mono-normal uppercase text-white letter-spacing-2" href="effect.html"><span aria-hidden="true">01</span>effect</a>
+            <li><a class="ff-mono-normal uppercase text-white letter-spacing-2" href="lab.html"><span aria-hidden="true">02</span>Lab</a>
+            <li><a class="ff-mono-normal uppercase text-white letter-spacing-2" href="materials.html"><span aria-hidden="true">03</span>Materials</a>
+        </ul>
+    </nav>
+  </header>
+  
+  <main id="main" class="grid-container grid-container--effect flow">
+    <h1 class="numbered-title"><span aria-hidden="true">01</span> Superconductivity Basics</h1>
+    
+    <picture id="Meissner-image">
+      <img src="assets/effect/image-Caldera.jpeg" alt="the Meissner">
+    </picture>
+    <picture hidden id="Magnetic-image">
+      <img src="assets/effect/image-Canyon.jpeg" alt="the planet Magnetic">
+    </picture>
+    <picture hidden id="Vortex-image">
+      <img src="assets/effect/image-Fjord.jpeg" alt="the planet Vortex">
+    </picture>
+    <picture hidden id="Quantum-image">
+      <img src="assets/effect/image-Plateau.jpeg" alt="the Meissner Quantum">
+    </picture>
+    
+    
+    <div class="tab-list underline-indicators flex" role="tablist" aria-label="effect list">
+        <button aria-selected="true" role="tab" aria-controls="Meissner-tab" class="uppercase ff-mono-normal text-accent letter-spacing-2" tabindex="0" data-image="Meissner-image">Meissner</button>
+        <button aria-selected="false" role="tab" aria-controls="Magnetic-tab" class="uppercase ff-mono-normal text-accent letter-spacing-2" tabindex="-1" data-image="Magnetic-image">Magnetic</button>
+        <button aria-selected="false" role="tab" aria-controls="Vortex-tab" class="uppercase ff-mono-normal text-accent letter-spacing-2" tabindex="-1" data-image="Vortex-image">Vortex</button>
+        <button aria-selected="false" role="tab" aria-controls="Quantum-tab" class="uppercase ff-mono-normal text-accent letter-spacing-2" tabindex="-1" data-image="Quantum-image">Quantum</button>
+    </div>
+
+    <!-- The Meissner -->
+    <article class="effect-info flow" id="Meissner-tab" tabindex="0" role="tabpanel">
+      <h2 class="fs-800 uppercase ff-mono">Meissner</h2>
+
+      <p>The Meissner Effect is a fascinating phenomenon observed in superconductors, where they expel virtually all magnetic flux from their interior when cooled below a critical temperature. This expulsion of magnetic fields results in the superconductor becoming perfectly diamagnetic, meaning it actively repels magnetic fields. </p>
+      
+      <div class="effect-meta flex">
+        <div>
+          <h3 class="text-accent fs-200 uppercase">Avg. distance</h3>
+          <p class="ff-mono uppercase">384,400 km</p>
+        </div>
+        <div>
+          <h3 class="text-accent fs-200 uppercase">Est. travel time</h3>
+          <p class="ff-mono uppercase">3 days</p>
+        </div>
+      </div>
+    </article>
+    
+    <!-- Magnetic -->
+    <article hidden class="effect-info flow" id="Magnetic-tab" tabindex="0"  role="tabpanel">
+      <h2 class="fs-800 uppercase ff-mono">Magnetic</h2>
+
+      <p>Magnetic susceptibility is a fundamental property of materials that quantifies their response to an applied magnetic field. In the context of superconductors, magnetic susceptibility plays a crucial role in understanding their behavior. </p>
+      
+      <div class="effect-meta flex">
+        <div>
+          <h3 class="text-accent fs-200 uppercase">Avg. distance</h3>
+          <p class="ff-mono uppercase">225 mil. km</p>
+        </div>
+        <div>
+          <h3 class="text-accent fs-200 uppercase">Est. travel time</h3>
+          <p class="ff-mono uppercase">9 months</p>
+        </div>
+      </div>
+    </article>
+    
+    <!-- Vortex -->
+    <article hidden class="effect-info flow" id="Vortex-tab" tabindex="0"  role="tabpanel">
+      <h2 class="fs-800 uppercase ff-mono">Vortex</h2>
+
+      <p>In the realm of superconductivity, vortex matter refers to a fascinating and intricate pattern that emerges when a superconductor is subjected to a magnetic field. When magnetic flux penetrates a superconducting material, it forms tiny whirlpools of electrical current called vortices. </p>
+      <div class="effect-meta flex">
+        <div>
+          <h3 class="text-accent fs-200 uppercase">Avg. distance</h3>
+          <p class="ff-mono uppercase">628 mil. km</p>
+        </div>
+        <div>
+          <h3 class="text-accent fs-200 uppercase">Est. travel time</h3>
+          <p class="ff-mono uppercase">3 years</p>
+        </div>
+      </div>
+    </article>
+    
+    <!-- Quantum -->
+    <article hidden class="effect-info flow" id="Quantum-tab" tabindex="0"  role="tabpanel">
+      <h2 class="fs-800 uppercase ff-mono">Quantum</h2>
+
+      <p>Quantum energy states are fundamental concepts in quantum mechanics that describe the allowed energy levels of a physical system. In the context of superconductors, understanding quantum energy states is essential for comprehending the behavior of electrons within the material.</p>
+      
+      <div class="effect-meta flex">
+        <div>
+          <h3 class="text-accent fs-200 uppercase">Avg. distance</h3>
+          <p class="ff-mono uppercase">1.6 bil. km</p>
+        </div>
+        <div>
+          <h3 class="text-accent fs-200 uppercase">Est. travel time</h3>
+          <p class="ff-mono uppercase">7 years</p>
+        </div>
+      </div>
+    </article>
+  </main>
+  
+<body>
+
+
+  
+</body>
+</html>

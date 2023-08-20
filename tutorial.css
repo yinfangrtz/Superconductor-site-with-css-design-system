@@ -1,0 +1,341 @@
+/* 
+shortcut key
+command + / for comment 
+option + click for mutiline choice
+*/
+
+/* Pseudo-elements are a way to create virtual elements in CSS that do not exist in the HTML markup 
+but can be styled and manipulated using CSS rules. They allow you to target specific parts of 
+an element's content and apply styles to them. 
+Pseudo-elements are denoted by the double colons (::) notation in CSS.
+
+There are several pseudo-elements available in CSS, but the most commonly used ones are 
+::before and ::after.  
+*/
+
+/* Apply some basic styling to the blockquote */
+.styled-quote {
+    position: relative;
+    padding-left: 40px;
+    font-style: italic;
+    border-left: 3px solid #3498db;
+    margin: 20px;
+}
+
+/* Add a decorative icon before the blockquote */
+.styled-quote::before {
+    content: "\201C"; /* Unicode character for opening double quotation mark */
+    font-size: 24px;
+    font-weight: bold;
+    color: #3498db;
+    position: absolute;
+    left: -25px;
+    top: -5px;
+}
+
+/* Add author attribution after the blockquote */
+.styled-quote::after {
+    content: "- John Doe";
+    font-size: 14px;
+    color: #777;
+    margin-top: 10px;
+    display: block;
+}
+
+/* 
+normal line height 1.4 is too small
+line-height: 1.5; 
+
+The @media (prefers-reduced-motion: reduce) query is a CSS media query that allows 
+you to target user preferences for reduced motion in their operating system or 
+browser settings. It's used to create a more accessible and user-friendly 
+experience for people who may have motion sensitivity, visual impairments, 
+or other conditions that make excessive animation or motion effects challenging 
+or uncomfortable.
+
+Custom gap value
+gap: var(--gap, 1rem);
+It specifies a default value of 1rem for the gap, but it allows you to override 
+that value using custom properties.
+If you want to customize the gap for specific instances, you can do so by setting 
+the --gap custom property:
+
+.container {
+    --gap: 20px;
+    display: flex;
+    gap: var(--gap, 1rem);
+}
+
+logical property
+The padding-inline property is a logical property in CSS that sets the padding 
+on the inline dimension of an element. The "inline" dimension refers to the 
+horizontal dimension for horizontal writing modes (like left-to-right) and the 
+vertical dimension for vertical writing modes.
+*/
+.example {
+    padding-inline: 2em;
+    background-color: #3498db;
+    margin-inline: auto;
+    max-width: 30rem;
+}
+
+/* 
+padding-inline to keep the content never touch the edge.
+
+.container for wrapping
+*/
+.flex {
+    display: flex;
+    gap: var(--gap, 1rem);
+}
+
+.grid {
+    display: grid;
+    gap: var(--gap, 1rem);
+}
+
+.container {
+    padding-inline: 2em;
+    margin-inline: auto;
+    max-width: 60rem;
+}
+
+.box {
+    background: rgb(130, 74, 111);
+    padding: 3rem;
+}
+
+/* 
+changing the gap variable without modifying the original utlitiy class 
+1 inline
+<div class="container flex" style="--gap: 5rem;">
+2 new class
+*/
+.call-to-action {
+    --gap: 5rem;
+    background: rgb(211, 178, 183);
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+/* 
+
+The :root and * selectors serve different purposes in CSS, and they target 
+different elements in the document tree.
+
+:root:
+The :root selector targets the highest-level parent element in the document, which is typically the <html> element.
+It is often used to define global CSS custom properties (variables) that can be accessed and used throughout the stylesheet.
+Custom properties defined using :root can store values like colors, font families, spacing units, etc., and they provide a centralized way to manage and apply these values consistently across the stylesheet.
+Example: :root { --primary-color: #3498db; }
+* (Universal Selector):
+The * selector targets all elements in the document.
+It can be used to apply styles to all elements or to reset default browser styles, among other use cases.
+It's a more general and broad way to target elements compared to more specific selectors.
+Example: * { margin: 0; padding: 0; }
+
+.flow > *:where(:not(:first-child)) {
+    margin-top: var(--flow-space, 1rem);
+}
+a selector that targets all immediate children of elements with the class .flow, 
+excluding the first child, and applies a margin-top style to create vertical 
+spacing between these children. The spacing is defined using a CSS custom property 
+(--flow-space), with a default value of 1rem.
+
+Absolutely, using rem (root em) units instead of px (pixels) is a good practice 
+for creating more accessible and responsive designs. rem units are relative to 
+the root font size of the document, which makes them adapt to changes in user 
+preferences and settings, including font size adjustments for better readability.
+
+When you link a Google Font with specific font weights like 400 (normal) and 700 
+(bold), you should use the corresponding font-weight values in your CSS to ensure 
+that the desired font weights are applied.
+
+Using Specific Font Weights:
+If you've included the font weights 400 (normal) and 700 (bold) in your Google Fonts link, 
+you should use those specific values in your CSS to ensure that the corresponding 
+font files are downloaded and applied correctly.
+Fallback to font-weight: bold:
+If you're not satisfied with the appearance of the bold weight provided by the 
+Google Font, you can use font-weight: bold to let the browser determine the most 
+suitable bold weight based on the available font files.
+The browser will use any available font weights that are closest to the "bold" 
+style, even if they were not explicitly included in the Google Fonts link.
+*/
+
+body {
+    font-family: 'Courier Prime', monospace;
+}
+
+.normal-text {
+    font-weight: 400; /* Normal weight */
+}
+
+.bold-text {
+    font-weight: 700; /* Bold weight */
+}
+
+.alternative-bold-text {
+    font-weight: bold; /* Browser selects closest available bold weight */
+}
+
+/* 
+.flow: This targets elements with the class flow.
+>: This is the child combinator selector, which selects elements that are direct 
+children of the previous element.
+*: This selects any type of element.
++: This is the adjacent sibling combinator selector, which selects elements that 
+are immediately preceded by the previous element.
+*: Again, this selects any type of element.
+So, the .flow > * + * selector will target any element that is a direct child of 
+an element with the class flow and is immediately preceded by another element 
+within the same parent element.
+
+.flow > * + * 
+the same as 
+.flow > *:not(:last-child) {
+    margin-bottom: 1rem;
+    outline: 1px solid red;
+}
+the same as 
+ */
+.flow > *:not(:first-child) {
+    margin-top: 1rem;
+    outline: 1px solid red;
+}
+/* 
+so the child element margin won't mess up with the parent element padding.
+
+Using :where() 
+.flow > *:where(:not(:first-child)) {
+}
+
+Without :where()
+.flow > *:(:not(:first-child)) {
+}
+
+The difference between .flow > *:where(:not(:first-child)) and .flow > *:(:not(:first-child)) lies in the usage of the :where() pseudo-class.
+
+.flow > *:where(:not(:first-child)):
+This selector targets all elements that are direct children of .flow and are not the first child.
+The :where() pseudo-class is a special case that does not affect the specificity of the selector. 
+It acts as a "container" for grouping selectors.
+The :not(:first-child) pseudo-class is applied to all elements within the :where() container.
+.flow > *:(:not(:first-child)):
+This selector also targets all elements that are direct children of .flow and are not the first child.
+However, the :not(:first-child) pseudo-class is directly applied to all elements without using 
+the :where() pseudo-class.
+In terms of functionality, both of these selectors achieve the same result: they select elements that 
+are not the first child of the .flow container. However, the use of :where() in the first selector provides a way to group and encapsulate the conditions while keeping the same specificity.
+
+Specificity is a concept in CSS that determines which rules are applied to a 
+particular element when multiple conflicting CSS rules target the same element. 
+It helps the browser decide which style declarations should take precedence 
+when there are competing styles.
+
+Specificity is calculated based on the various components of a selector. In 
+order of importance, these components are:
+
+Inline Styles: Styles defined directly on the HTML element using the style 
+attribute. Inline styles have the highest specificity.
+IDs: Selectors that target elements by their unique id attribute.
+Classes, Pseudo-classes, and Attribute Selectors: Selectors targeting classes, 
+pseudo-classes (like :hover, :nth-child(), etc.), and attribute selectors.
+Element Type and Pseudo-elements: Selectors targeting element types 
+(e.g., div, p, etc.) and pseudo-elements (e.g., ::before, ::after, etc.).
+
+the use of the :where() pseudo-class does not affect the specificity of a selector. 
+The specificity is determined by the individual components of the selector, 
+such as element types, classes, IDs, and pseudo-classes, but not by the presence 
+of the :where() pseudo-class.
+
+The :where() pseudo-class is a CSS function that acts as a grouping container 
+for selectors. It doesn't introduce any new specificity. Its purpose is to group 
+selectors together without changing the specificity of the individual selectors 
+within the :where() container.
+
+So, whether you use :where() or not, the specificity of the selector remains the 
+same. The use of :where() affects only how the selectors are grouped, but it 
+doesn't alter the specificity calculation itself.
+
+*/
+
+.hover-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    width: 100px; /* Set your desired width */
+    height: 100px; /* Aspect ratio will ensure it's a square */
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #3498db;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    aspect-ratio: 1; /* Maintain a square aspect ratio */
+}
+
+.hover-button:hover {
+    background-color: #c467e6;
+    transform: scale(1.05);
+}
+
+/* 
+margin: 1.5rem clamp(1.5rem, 5vw, 3.5rem);
+1.5rem: This is a fixed margin of 1.5 rems 
+(relative to the font size of the element).
+clamp(1.5rem, 5vw, 3.5rem): This is a responsive margin using 
+the clamp() function. It specifies a range for the margin where 
+the minimum is 1.5 rems, the preferred value is a percentage of 
+the viewport width (5vw), and the maximum is 3.5 rems. 
+The clamp() function ensures that the margin will not go below 
+1.5 rems and will not exceed 3.5 rems, while also scaling based 
+on the viewport width.
+
+vw (Viewport Width):
+vw stands for "viewport width."
+1 vw is equal to 1% of the width of the viewport (the browser window or the device screen width).
+It's a relative unit that adjusts automatically as the viewport size changes.
+For example, 5vw would be 5% of the viewport width.
+rem (Root EM):
+rem stands for "root em."
+It's a relative unit based on the font size of the root element (usually the <html> element).
+1 rem is equal to the font size of the root element. If the root font size is 16px, then 1 rem is 16px.
+It's useful for creating consistent and scalable designs, especially when working with typography.
+Unlike em units, which are based on the font size of the parent element, rem units are based on the root element, providing a more predictable and manageable layout.
+
+Yes, in the context of CSS, the root element is typically the <html> element. The default base font size of the root element is usually set by the browser to be around 16 pixels (16px). This means that 1 rem is equal to 16 pixels by default.
+If you want to ensure consistent behavior, you can explicitly set the base font size for the root element in your CSS:
+html {
+    font-size: 16px; 
+}
+
+In the CSS rule margin: 1.5rem clamp(1.5rem, 5vw, 3.5rem);, the first 1.5rem is a fixed margin value. It will always be 1.5rem, regardless of the viewport width.
+
+Let's break down the clamp() function and the entire rule:
+
+1.5rem: This is the minimum margin value. It's a fixed value of 1.5rem that will be applied to the element.
+clamp(1.5rem, 5vw, 3.5rem): This part uses the clamp() function to create a responsive margin that adapts based on the viewport width.
+The minimum value is 1.5rem.
+The preferred value is 5vw, which is a percentage of the viewport width (5% of the viewport width).
+The maximum value is 3.5rem.
+So, the margin applied to the element will be a combination of a fixed margin of 1.5rem plus a responsive margin that varies between 1.5rem (minimum) and 5vw (preferred), but it won't exceed 3.5rem (maximum).
+
+.grid-container p:not([class]) {
+    max-width: 50ch;
+}
+is limiting the maximum width of any <p> element that doesn't have a class ([class] refers to elements that have no class attribute). 
+
+
+.primary-navigation a > span: This selector targets <span> elements that are direct children of <a> elements within .primary-navigation.
+.primary-navigation a span: This selector targets <span> elements that are descendants of <a> elements within .primary-navigation, regardless of whether they are direct children or nested deeper within other elements.
+
+
+*/
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 2em repeat(2, minmax(0, 40rem)) 2em;
+}
