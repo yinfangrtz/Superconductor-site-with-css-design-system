@@ -1,24 +1,9 @@
 Superconductor website 
 
-
-
-
-Quick start:
-
-```
-$ npm install
-$ npm start
-````
-
-Head over to https://vitejs.dev/ to learn more about using vite
-## About Scrimba
-
-At Scrimba our goal is to create the best possible coding school at the cost of a gym membership! 💜
-If we succeed with this, it will give anyone who wants to become a software developer a realistic shot at succeeding, regardless of where they live and the size of their wallets 🎉
-The Frontend Developer Career Path aims to teach you everything you need to become a Junior Developer, or you could take a deep-dive with one of our advanced courses 🚀
-
-- [Our courses](https://scrimba.com/allcourses)
-- [The Frontend Career Path](https://scrimba.com/learn/frontend)
-- [Become a Scrimba Pro member](https://scrimba.com/pricing)
-
 Happy Coding!
+
+<img width="1437" alt="image" src="https://github.com/yinfangrtz/Superconductor-site-with-css-design-system/assets/106718273/1eb844fa-f1b0-438c-b2a8-3381e8c8cc2f">
+<img width="1437" alt="image" src="https://github.com/yinfangrtz/Superconductor-site-with-css-design-system/assets/106718273/163d050f-6775-4a91-abd5-a9c0a31c10b6">
+<img width="744" alt="image" src="https://github.com/yinfangrtz/Superconductor-site-with-css-design-system/assets/106718273/16dcf249-bbce-4ec0-b44f-b2d0f1dde97b">
+<img width="744" alt="image" src="https://github.com/yinfangrtz/Superconductor-site-with-css-design-system/assets/106718273/3d008b92-5414-4461-9a6a-54f8b2e8744f">
+<img width="744" alt="image" src="https://github.com/yinfangrtz/Superconductor-site-with-css-design-system/assets/106718273/2087855b-afc2-4344-83d1-7e8593a1388f">
